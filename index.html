@@ -33,6 +33,10 @@
             cursor: none;
         }
 
+        .logo-text {
+    text-decoration: none;
+}
+
         /* Custom cursor */
         .cursor {
             width: 20px;
@@ -486,10 +490,20 @@
             .email-alternative { font-size: 1rem; }
             .site-footer { padding: 0 15px; }
         }
+
+        /* Hide custom cursor on touch devices (phones/tablets) */
+@media (hover: none), (pointer: coarse) {
+  body { cursor: auto; }
+  .cursor { display: none !important; }
+}
+
     </style>
 </head>
 
 <body>
+
+    <div id="top"></div>
+
     <!-- Custom cursor -->
     <div class="cursor"></div>
 
@@ -498,8 +512,8 @@
 
     <!-- Header Navigation -->
     <nav class="header-nav" id="headerNav">
-        <div class="logo-text">1509designs</div>
-    </nav>
+    <a href="#top" class="logo-text">1509designs</a>
+</nav>
 
     <div class="content">
         <!-- Hero section -->
@@ -701,19 +715,25 @@
         document.addEventListener('DOMContentLoaded', function() {
             const gradientBg = document.getElementById('gradient-background');
             const cursor = document.querySelector('.cursor');
+
+            // Disable custom cursor on touch devices
+const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+if (isTouch) {
+    if (cursor) cursor.style.display = 'none';
+} else {
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+}
+
             const headerNav = document.getElementById('headerNav');
 
             let mouseX = 0;
             let mouseY = 0;
 
-            // Custom cursor
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-
-                cursor.style.left = mouseX + 'px';
-                cursor.style.top = mouseY + 'px';
-            });
 
             // Smooth scroll for internal links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
