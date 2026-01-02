@@ -13,17 +13,24 @@
     <title>1509designs — Brand Identity & Visual Systems | London</title>
     <meta name="description" content="1509designs — brand identity and visual systems by Tetiana Lupashku. Art direction and design systems for founders, studios, and fast-growing companies. Based in London.">
 
+    <!-- Google Analytics (GA4) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHKTSB78EJ"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YHKTSB78EJ');
+</script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             overflow-x: hidden;
@@ -33,9 +40,7 @@
             cursor: none;
         }
 
-        .logo-text {
-    text-decoration: none;
-}
+        .logo-text { text-decoration: none; }
 
         /* Custom cursor */
         .cursor {
@@ -152,9 +157,7 @@
             padding: 0;
         }
 
-        .featured-project:last-child {
-            margin-bottom: 0;
-        }
+        .featured-project:last-child { margin-bottom: 0; }
 
         .project-link {
             display: block;
@@ -187,9 +190,7 @@
             transition: transform 0.4s ease;
         }
 
-        .project-link:hover .project-video {
-            transform: scale(1.05);
-        }
+        .project-link:hover .project-video { transform: scale(1.05); }
 
         .project-info {
             max-width: 1200px;
@@ -236,11 +237,7 @@
             flex-shrink: 0;
         }
 
-        .meta-values {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+        .meta-values { display: flex; flex-wrap: wrap; gap: 10px; }
 
         .meta-tag {
             font-family: 'Outfit', sans-serif;
@@ -254,10 +251,7 @@
             transition: all 0.3s ease;
         }
 
-        .meta-tag:hover {
-            border-color: #667eea;
-            color: #667eea;
-        }
+        .meta-tag:hover { border-color: #667eea; color: #667eea; }
 
         /* Portfolio sections */
         .portfolio-section {
@@ -269,10 +263,7 @@
             padding: 0;
         }
 
-        .portfolio-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .portfolio-section.visible { opacity: 1; transform: translateY(0); }
 
         /* About section */
         .about-section {
@@ -305,9 +296,7 @@
             max-width: 100%;
         }
 
-        .about-text:last-child {
-            margin-bottom: 0;
-        }
+        .about-text:last-child { margin-bottom: 0; }
 
         /* Contact section */
         .contact-section {
@@ -322,10 +311,7 @@
             transition: all 0.6s ease;
         }
 
-        .contact-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .contact-section.visible { opacity: 1; transform: translateY(0); }
 
         .contact-title {
             font-family: 'Outfit', sans-serif;
@@ -339,20 +325,11 @@
             white-space: nowrap;
         }
 
-        .contact-form-container {
-            width: 100%;
-            max-width: 100%;
-        }
+        .contact-form-container { width: 100%; max-width: 100%; }
 
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
 
-        .form-group {
-            position: relative;
-        }
+        .form-group { position: relative; }
 
         .form-group input,
         .form-group textarea {
@@ -376,9 +353,7 @@
         }
 
         .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #7a8ba0;
-        }
+        .form-group textarea::placeholder { color: #7a8ba0; }
 
         .submit-btn {
             padding: 15px 30px;
@@ -432,9 +407,7 @@
             transition: color 0.3s ease;
         }
 
-        .email-link:hover {
-            color: #764ba2;
-        }
+        .email-link:hover { color: #764ba2; }
 
         /* Footer */
         .site-footer {
@@ -492,11 +465,10 @@
         }
 
         /* Hide custom cursor on touch devices (phones/tablets) */
-@media (hover: none), (pointer: coarse) {
-  body { cursor: auto; }
-  .cursor { display: none !important; }
-}
-
+        @media (hover: none), (pointer: coarse) {
+          body { cursor: auto; }
+          .cursor { display: none !important; }
+        }
     </style>
 </head>
 
@@ -512,8 +484,8 @@
 
     <!-- Header Navigation -->
     <nav class="header-nav" id="headerNav">
-    <a href="#top" class="logo-text">1509designs</a>
-</nav>
+        <a href="#top" class="logo-text">1509designs</a>
+    </nav>
 
     <div class="content">
         <!-- Hero section -->
@@ -686,7 +658,14 @@
         <div class="contact-section" id="contactSection">
             <h2 class="contact-title">Let's Work Together</h2>
             <div class="contact-form-container">
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                <!-- Formspree -->
+                <!-- 2) Replace YOUR_FORM_ID with your real Formspree form ID (the /f/... part) -->
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/https://formspree.io/f/xaqnjnbe" method="POST">
+                    <!-- Optional but useful -->
+                    <input type="hidden" name="_subject" value="New message from 1509designs.com">
+                    <input type="hidden" name="_format" value="plain">
+
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -698,9 +677,10 @@
                     </div>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
+
                 <p class="email-alternative">
                     Selected work shown. Full case studies available on request.<br>
-                    Use the form or email me directly at <a href="mailto:hi@1509designs.com" class="email-link">hi@1509designs.com</a>
+                    Use the form or email me directly at <a href="mailto:ya.tetyanka@gmail.com" class="email-link">ya.tetyanka@gmail.com</a>
                 </p>
             </div>
         </div>
@@ -717,23 +697,22 @@
             const cursor = document.querySelector('.cursor');
 
             // Disable custom cursor on touch devices
-const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
-if (isTouch) {
-    if (cursor) cursor.style.display = 'none';
-} else {
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        cursor.style.left = mouseX + 'px';
-        cursor.style.top = mouseY + 'px';
-    });
-}
+            const isTouch = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+            if (isTouch) {
+                if (cursor) cursor.style.display = 'none';
+            } else {
+                document.addEventListener('mousemove', (e) => {
+                    mouseX = e.clientX;
+                    mouseY = e.clientY;
+                    cursor.style.left = mouseX + 'px';
+                    cursor.style.top = mouseY + 'px';
+                });
+            }
 
             const headerNav = document.getElementById('headerNav');
 
             let mouseX = 0;
             let mouseY = 0;
-
 
             // Smooth scroll for internal links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -773,7 +752,7 @@ if (isTouch) {
             }
 
             window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // <-- important: makes first section visible without scrolling
+            revealOnScroll();
 
             // Dynamic gradient effect
             document.addEventListener('mousemove', function(e) {
